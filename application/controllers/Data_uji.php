@@ -38,7 +38,8 @@ class Data_uji extends CI_Controller
         } else {
             $data = [
                 'pasien_uji_nama' => $this->input->post('pasien'),
-                'penyakit_kode' => ""
+                'penyakit_kode_nb' => "",
+                'penyakit_kode_ds' => "",
             ];
             // echo $this->input->post('pasien');
             // die;
@@ -87,5 +88,10 @@ class Data_uji extends CI_Controller
             $this->m_vic->update_data(['pasien_uji_id' => $id], ['penyakit_kode_nb' => "P0" . "$key"], 'tbl_pasien_uji');
             redirect('Data_uji');
         }
+    }
+
+    public function dempster_shafer($id = 0)
+    {
+        # code...
     }
 }

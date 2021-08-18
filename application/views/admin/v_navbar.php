@@ -26,7 +26,7 @@
                         <a href="<?= base_url('Naive_bayes') ?>">Naive Bayes</a>
                     </li>
                     <li>
-                        <a href=<?= base_url('Dumpster_shifer') ?>">Dumpster Shifer</a>
+                        <a href="<?= base_url('Dempster_shafer') ?>">Dempster Shafer</a>
                     </li>
                 </ul>
             </li>

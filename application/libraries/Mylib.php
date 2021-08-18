@@ -26,7 +26,7 @@ class Mylib
 	{
 		$ci = &get_instance();
 		if (!array_key_exists('title', $data)) {
-			$data['title'] = 'Naive Bayes dan Dumpster Shifer';
+			$data['title'] = 'Naive Bayes dan Dempster Shafer';
 		}
 		if ($ci->session->userdata('status') != 'loginadmin') {
 			$ci->load->view('admin/v_header', $data);
