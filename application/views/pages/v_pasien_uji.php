@@ -3,6 +3,8 @@
         <h1 class="page-header">
             Data Tabel <small>Tabel Uji</small>
         </h1>
+        <?php if (isset($_GET['notif'])) : _notif($this->session->flashdata($_GET['notif']));
+        endif; ?>
     </div>
     <div id="page-inner">
         <div class="row">
@@ -63,7 +65,7 @@
                                             </td>
                                             <td>
                                                 <a href="<?= base_url('Data_uji/naive_bayes/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Naive Bayes</a> |
-                                                <a href="" class="btn btn-sm btn-primary">Dempster Shifer</a>
+                                                <a href="<?= base_url('Data_uji/dempster_shafer/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Dempster Shifer</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

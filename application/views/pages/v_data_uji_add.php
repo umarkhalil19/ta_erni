@@ -33,7 +33,7 @@
                                     </label>
                                 </div>
                                 <div class="radio3 radio-check radio-warning radio-inline">
-                                    <input type="radio" id="radio6<?= $g->gejala_id ?>" name="<?= $g->gejala_id . 'gejala' ?>" value="0">
+                                    <input type="radio" id="radio6<?= $g->gejala_id ?>" name="<?= $g->gejala_id . 'gejala' ?>" value="0" checked="checked">
                                     <label for="radio6<?= $g->gejala_id ?>">
                                         Tidak
                                     </label>

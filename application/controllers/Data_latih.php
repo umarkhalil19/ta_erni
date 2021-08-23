@@ -21,6 +21,7 @@ class Data_latih extends CI_Controller
     public function index()
     {
         $data['pasien'] = $this->m_vic->get_data('tbl_pasien');
+        // $data['diagnosa'] = $this->m_vic->get_data('tbl_diagnosa');
         $this->mylib->aview('v_pasien', $data);
     }
 }

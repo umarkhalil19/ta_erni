@@ -57,17 +57,13 @@ function _notif($message)
     $notif = $_GET['notif'];
     $notif_cut = substr($notif, 0, 5);
     if ($notif_cut == 'suces') { ?>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <?php echo $message; ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        </button>
-      </div><br>
+      <div class="alert alert-success">
+        <?= $message ?>
+      </div>
     <?php } elseif ($notif_cut == 'error') { ?>
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <?php echo $message; ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        </button>
-      </div><br>
+      <div class="alert alert-danger">
+        <?= $message ?>
+      </div>
 <?php }
   }
 }

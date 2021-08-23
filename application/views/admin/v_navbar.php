@@ -12,10 +12,7 @@
                         <a href="<?= base_url('Gejala') ?>">Gejala</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('Data_latih') ?>">Data Latih</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('Data_uji') ?>">Data Uji</a>
+                        <a href="<?= base_url('Penyakit') ?>">Penyakit</a>
                     </li>
                 </ul>
             </li>
@@ -27,6 +24,17 @@
                     </li>
                     <li>
                         <a href="<?= base_url('Dempster_shafer') ?>">Dempster Shafer</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-file"></i>Data Pasien<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="<?= base_url('Data_latih') ?>">Data Latih</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Data_uji') ?>">Data Uji</a>
                     </li>
                 </ul>
             </li>

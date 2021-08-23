@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Tabel Data Gejala
-                        <a href="<?= base_url("Gejala/gejala_add") ?>" class="btn btn-md btn-success pull-right"><i class="fa fa-plus"> Tambah Data</i></a>
+                        <a href="<?= base_url("Penyakit/penyakit_add") ?>" class="btn btn-md btn-success pull-right"><i class="fa fa-plus"> Tambah Data</i></a>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -21,7 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Gejala</th>
+                                        <th>Penyakit</th>
                                         <th>Kode</th>
                                         <th>Action</th>
                                     </tr>
@@ -29,15 +29,15 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($gejala->result() as $g) :
+                                    foreach ($penyakit->result() as $p) :
                                     ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $g->gejala_nama ?></td>
-                                            <td><?= $g->gejala_kode ?></td>
+                                            <td><?= $p->penyakit_nama ?></td>
+                                            <td><?= $p->penyakit_kode ?></td>
                                             <td>
-                                                <a href="<?= base_url('Gejala/gejala_edit/' . $g->gejala_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><i class="fa fa-wrench"></i></a>
-                                                <a href="<?= base_url('Gejala/gejala_delete/' . $g->gejala_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><i class="fa fa-trash-o"></i></a>
+                                                <a href="<?= base_url('Penyakit/penyakit_edit/' . $p->penyakit_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><i class="fa fa-wrench"></i></a>
+                                                <a href="<?= base_url('Penyakit/penyakit_delete/' . $p->penyakit_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
