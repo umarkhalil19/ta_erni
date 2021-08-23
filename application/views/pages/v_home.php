@@ -16,7 +16,7 @@
                             </div>
                             <hr>
                             <div class="panel-body" align="center">
-                                <h2>Algoritma Naive Bayes dan Dumpster Shifer</h2>
+                                <h2>Algoritma Naive Bayes dan Dempster Shafer</h2>
                             </div>
                             <br>
                         </div>

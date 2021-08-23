@@ -65,7 +65,7 @@
                                             </td>
                                             <td>
                                                 <a href="<?= base_url('Data_uji/naive_bayes/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Naive Bayes</a> |
-                                                <a href="<?= base_url('Data_uji/dempster_shafer/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Dempster Shifer</a>
+                                                <a href="<?= base_url('Data_uji/dempster_shafer/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Dempster Shafer</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
