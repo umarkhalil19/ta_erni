@@ -27,7 +27,7 @@
                                     </tr>
                                     <tr>
                                         <th>Naive Bayes</th>
-                                        <th>Dempster Shifer</th>
+                                        <th>Dempster Shafer</th>
                                     </tr>
                                 </thead>
                                 <tbody>
