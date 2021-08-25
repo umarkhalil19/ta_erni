@@ -13,9 +13,9 @@ class Data_latih extends CI_Controller
         $this->load->helper('vic_convert_helper');
         $this->load->library(array('session', 'form_validation', 'mylib'));
         $this->load->model('m_vic');
-        // if ($this->session->userdata('level') != 99) {
-        //     redirect(base_url());
-        // }
+        if ($this->session->userdata('level') != 99) {
+            redirect(base_url());
+        }
     }
 
     public function index()
