@@ -36,6 +36,9 @@
                     <li>
                         <a href="<?= base_url('Data_uji') ?>">Data Uji</a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('Grafik') ?>">Grafik</a>
+                    </li>
                 </ul>
             </li>
         </ul>
