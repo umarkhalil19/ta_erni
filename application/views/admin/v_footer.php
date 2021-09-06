@@ -8,7 +8,7 @@
 <!-- jQuery Js -->
 <script src="<?= base_url() ?>assets/js/jquery-1.10.2.js"></script>
 <!-- Chart Js -->
-<script type="text/javascript" src="<?= base_url() ?>assets/js/Chart.min.js"></script>
+<!-- <script type="text/javascript" src="<?= base_url() ?>assets/js/Chart.min.js"></script>
 <?php
 $label_nb = $this->db->query("SELECT DISTINCT(penyakit_kode_nb) as label FROM tbl_pasien_uji ORDER BY penyakit_kode_nb ASC");
 $label_ds = $this->db->query("SELECT DISTINCT(penyakit_kode_ds) as label FROM tbl_pasien_uji ORDER BY penyakit_kode_ds ASC");
@@ -106,7 +106,7 @@ $label_ds = $this->db->query("SELECT DISTINCT(penyakit_kode_ds) as label FROM tb
         };
         myBarChart = new Chart(ctx).Bar(data, option_bars);
     });
-</script>
+</script> -->
 
 <!-- Bootstrap Js -->
 <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
