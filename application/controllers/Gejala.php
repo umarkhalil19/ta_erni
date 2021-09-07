@@ -88,6 +88,10 @@ class Gejala extends CI_Controller
         } else {
             $w = ['gejala_id' => $id];
             $this->m_vic->delete_data($w, 'tbl_gejala');
+            $this->m_vic->delete_data($w, 'tbl_dempster');
+            $this->m_vic->delete_data($w, 'tbl_diagnosa');
+            $this->m_vic->delete_data($w, 'tbl_gejala_uji');
+            $this->m_vic->delete_data($w, 'tbl_likelihood');
             $this->session->set_flashdata('suces', 'Data Gejala berhasil dihapus');
             redirect('Gejala?notif=suces');
         }

@@ -12,7 +12,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title><?= $title ?></title>
+    <title>Naive Bayes dan Dempster Shafer</title>
     <!-- Bootstrap Styles-->
     <link href="<?= base_url() ?>assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->

@@ -21,7 +21,50 @@ class Data_latih extends CI_Controller
     public function index()
     {
         $data['pasien'] = $this->m_vic->get_data('tbl_pasien');
-        // $data['diagnosa'] = $this->m_vic->get_data('tbl_diagnosa');
+        // $data['diagnosa'] = $this->db->query("SELECT * FROM tbl_diagnosa");
+        // $diagnosa = $this->m_vic->get_data('tbl_diagnosa');
         $this->mylib->aview('v_pasien', $data);
+        // echo '<pre>';
+        // print_r($diagnosa->result());
+        // echo '</pre>';
+    }
+
+    public function data_latih_add()
+    {
+        $data['gejala'] = $this->m_vic->get_data('tbl_gejala');
+        $data['penyakit'] = $this->m_vic->get_data('tbl_penyakit');
+        $this->mylib->aview('v_data_latih_add', $data);
+    }
+
+    public function data_latih_add_act()
+    {
+        $this->form_validation->set_rules('pasien', 'Nama Pasien', 'required');
+        if ($this->form_validation->run() == false) {
+            $this->data_latih_add();
+        } else {
+            $data = [
+                'pasien_nama' => $this->input->post('pasien'),
+                'penyakit_kode' => $this->input->post('penyakit')
+            ];
+            // echo $this->input->post('pasien');
+            // die;
+            $this->m_vic->insert_data($data, 'tbl_pasien');
+            $id = $this->db->insert_id();
+            $gejala = $this->db->query("SELECT gejala_id FROM tbl_gejala");
+            foreach ($gejala->result() as $g) {
+                $nilai = $this->input->post($g->gejala_id . 'gejala');
+                // if ($nilai == 1) {
+                $data_uji = [
+                    'pasien_id' => $id,
+                    'gejala_id' => $g->gejala_id,
+                    'gejala_nilai' => $nilai,
+                    'penyakit_kode' => $this->input->post('penyakit')
+                ];
+                $this->m_vic->insert_data($data_uji, 'tbl_diagnosa');
+                // }
+            }
+            $this->session->set_flashdata('suces', 'Data Latih berhasil ditambah');
+            redirect('Data_latih?notif=suces');
+        }
     }
 }

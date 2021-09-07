@@ -58,7 +58,77 @@ class Data_uji extends CI_Controller
                     $this->m_vic->insert_data($data_uji, 'tbl_gejala_uji');
                 }
             }
-            redirect('Data_uji');
+            $this->session->set_flashdata('suces', 'Data pasien berhasil ditambah');
+            redirect('Data_uji?notif=suces');
+        }
+    }
+
+    public function data_uji_edit($id = 0)
+    {
+        if ($id == 0) {
+            $this->session->set_flashdata('error', 'Data uji tidak ditemukan');
+            redirect('Data_uji?notif=error');
+        } else {
+            $w = [
+                'pasien_uji_id' => $id
+            ];
+            $data['pasien'] = $this->m_vic->edit_data($w, 'tbl_pasien_uji')->row();
+            // $data['gejala_uji'] = $this->m_vic->edit_data($w, 'tbl_gejala_uji');
+            $data['gejala'] = $this->m_vic->get_data('tbl_gejala');
+            $this->mylib->aview('v_data_uji_edit', $data);
+        }
+    }
+
+    public function data_uji_update($id = 0)
+    {
+        if ($id == 0) {
+            $this->session->set_flashdata('error', 'Data pasien tidak ditemukan');
+            redirect('Data_uji?notif=error');
+        } else {
+            $this->form_validation->set_rules('pasien', 'Nama Pasien', 'required');
+            if ($this->form_validation->run() == false) {
+                redirect('Data_uji/data_uji_edit/' . $id);
+            } else {
+                $data = [
+                    'pasien_uji_nama' => $this->input->post('pasien'),
+                ];
+                $w = [
+                    'pasien_uji_id' => $id
+                ];
+                $this->m_vic->delete_data($w, 'tbl_gejala_uji');
+                $this->m_vic->update_data($w, $data, 'tbl_pasien_uji');
+                // $id = $this->db->insert_id();
+                $gejala = $this->db->query("SELECT gejala_id FROM tbl_gejala");
+                foreach ($gejala->result() as $g) {
+                    $nilai = $this->input->post($g->gejala_id . 'gejala');
+                    if ($nilai == 1) {
+                        $data_uji = [
+                            'pasien_uji_id' => $id,
+                            'gejala_id' => $g->gejala_id,
+                            'gejala_uji_nilai' => $nilai
+                        ];
+                        $this->m_vic->insert_data($data_uji, 'tbl_gejala_uji');
+                    }
+                }
+                $this->session->set_flashdata('suces', 'Data pasien berhasil diubah');
+                redirect('Data_uji?notif=suces');
+            }
+        }
+    }
+
+    public function data_uji_delete($id = 0)
+    {
+        if ($id == 0) {
+            $this->session->set_flashdata('error', 'Data pasien tidak ditemukan');
+            redirect('Data_uji?notif=error');
+        } else {
+            $w = [
+                'pasien_uji_id' => $id
+            ];
+            $this->m_vic->delete_data($w, 'tbl_gejala_uji');
+            $this->m_vic->delete_data($w, 'tbl_pasien_uji');
+            $this->session->set_flashdata('suces', 'Data pasien berhasil dihapus');
+            redirect('Data_uji?notif=suces');
         }
     }
 

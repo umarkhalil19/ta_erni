@@ -21,8 +21,9 @@
                                 <thead>
                                     <tr>
                                         <th rowspan="2">#</th>
-                                        <th width="50%" rowspan="2">Gejala</th>
+                                        <th width="40%" rowspan="2">Gejala</th>
                                         <th width="5%" colspan="2">Diagnosa</th>
+                                        <th rowspan="2">Pengujian Algortima</th>
                                         <th rowspan="2">Action</th>
                                     </tr>
                                     <tr>
@@ -66,6 +67,10 @@
                                             <td>
                                                 <a href="<?= base_url('Data_uji/naive_bayes/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Naive Bayes</a> |
                                                 <a href="<?= base_url('Data_uji/dempster_shafer/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary">Dempster Shafer</a>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('Data_uji/data_uji_edit/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><small class="fa fa-wrench"></small></a>
+                                                <a href="<?= base_url('Data_uji/data_uji_delete/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><small class="fa fa-trash-o"></small></a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

@@ -22,6 +22,7 @@
                                         <th colspan="3">Penyakit</th>
                                         <th rowspan="2">Nilai Kepercayaan</th>
                                         <th rowspan="2">Nilai Ketidakpastian</th>
+                                        <th rowspan="2">Action</th>
                                     </tr>
                                     <tr>
                                         <?php
@@ -55,6 +56,9 @@
                                             ?>
                                             <td><?= $g->gejala_kepercayaan ?></td>
                                             <td><?= $g->gejala_ketidakpastian ?></td>
+                                            <td>
+                                                <a href="<?= base_url('Dempster_shafer/dempster_edit/' . $g->gejala_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><small class="fa fa-wrench"></small></a>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
