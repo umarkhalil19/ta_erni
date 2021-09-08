@@ -14,7 +14,7 @@ class Data_uji extends CI_Controller
         $this->load->helper('my_helper');
         $this->load->library(array('session', 'form_validation', 'mylib'));
         $this->load->model('m_vic');
-        if ($this->session->userdata('level') != 99) {
+        if ($this->session->userdata('level') != 99 && $this->session->userdata('level') != 1) {
             redirect(base_url());
         }
     }

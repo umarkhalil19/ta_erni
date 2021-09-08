@@ -61,66 +61,10 @@ class Login extends CI_Controller
                     'level' => $mydata->user_level,
                 ];
                 $this->session->set_userdata($session);
-                redirect('Admin');
+                redirect('Dashboard');
             } else {
-                // $uname = vic_slug_akun($this->input->post('username'));
-                // $pass = md5($this->input->post('password') . "222");
-                // $where = array(
-                //     'user_id' => $uname,
-                //     'password' => $pass,
-                // );
-                // $data = $this->m_vic->simpeg_login($where, 'users_website');
-                // $cek2 = $this->db->query("SELECT * FROM tbl_users WHERE user_login='$uname' AND user_status='Aktif'");
-                // if ($data->num_rows() > 0 && $cek2->num_rows() > 0) {
-                //     $mydata = $cek2->row();
-                //     $mydata2 = $data->row();
-                //     $session = [
-                //         'id' => $mydata->user_id,
-                //         'nama' => $mydata->user_name,
-                //         'login' => $mydata->user_login,
-                //         'email' => $mydata->user_email,
-                //         'level' => $mydata->user_level,
-                //     ];
-                //     $this->session->set_userdata($session);
-                //     redirect('Dashboard');
-                // } else {
-
-                // $where = array(
-                //     'dosen_nidn' => $uname,
-                //     'dosen_pass' => $pass,
-                // );
-                // $data = $this->m_vic->edit_data($where, 'dah_dosen');
-                // if ($data->num_rows() > 0) {
-                //     $mydata = $data->row();
-                //     $session = [
-                //         'nama' => $mydata->dosen_nama,
-                //         'login' => $mydata->dosen_nidn,
-                //         // 'email' => $mydata->user_email,
-                //         'level' => 'dosen',
-                //     ];
-                //     $this->session->set_userdata($session);
-                //     redirect('Dosen');
-                // } else {
-                //     $where = array(
-                //         'mhs_nim' => $uname,
-                //         'mhs_pass' => $pass,
-                //     );
-                //     $data = $this->m_vic->edit_data($where, 'tbl_mahasiswa');
-                //     if ($data->num_rows() > 0) {
-                //         $mydata = $data->row();
-                //         $session = [
-                //             'nama' => $mydata->mhs_nama,
-                //             'login' => $mydata->mhs_nim,
-                //             // 'email' => $mydata->user_email,
-                //             'level' => 'mhs',
-                //         ];
-                //         $this->session->set_userdata($session);
-                //         redirect('Mahasiswa');
-                //     } else {
                 $this->session->set_flashdata('error', 'Username atau Password anda salah');
                 redirect('login?notif=error');
-                // }
-                // }
             }
         }
     }

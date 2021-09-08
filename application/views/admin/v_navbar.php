@@ -3,7 +3,7 @@
         <ul class="nav" id="main-menu">
 
             <li>
-                <a href="<?= base_url('Admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a>
+                <a href="<?= base_url('Dashboard') ?>"><i class="fa fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-file"></i> Master Data<span class="fa arrow"></span></a>
@@ -13,6 +13,9 @@
                     </li>
                     <li>
                         <a href="<?= base_url('Penyakit') ?>">Penyakit</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Users') ?>">Users</a>
                     </li>
                 </ul>
             </li>

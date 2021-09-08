@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Grafik extends CI_Controller
+class Dashboard extends CI_Controller
 {
 
     function __construct()
@@ -20,8 +20,12 @@ class Grafik extends CI_Controller
 
     public function index()
     {
-        // $data['pasien'] = $this->m_vic->get_data('tbl_pasien');
-        // $data['diagnosa'] = $this->m_vic->get_data('tbl_diagnosa');
-        $this->load->view('pages/v_grafik');
+        $this->mylib->aview('v_home');
+    }
+
+    function logout()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url());
     }
 }

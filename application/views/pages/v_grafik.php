@@ -39,7 +39,7 @@ Website: http://www.webthemez.com/
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?= base_url('Admin') ?>"><strong> Aplikasi TGA</strong></a>
+                <a class="navbar-brand" href="<?= base_url('Dashboard') ?>"><strong> Aplikasi TGA</strong></a>
 
                 <div id="sideNav" href="">
                     <i class="fa fa-bars icon"></i>
@@ -53,7 +53,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="<?= base_url('Admin/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?= base_url('Dashboard/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -67,7 +67,7 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="<?= base_url('Admin') ?>"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="<?= base_url('Dashboard') ?>"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-file"></i> Master Data<span class="fa arrow"></span></a>

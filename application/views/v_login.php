@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login 07</title>
+    <title>Naive Bayes dan Dempster Shafer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,6 +27,8 @@
                             </div>
                         </div>
                         <div class="login-wrap p-4 p-lg-5">
+                            <?php if (isset($_GET['notif'])) : _notif($this->session->flashdata($_GET['notif']));
+                            endif; ?>
                             <div class="d-flex">
                                 <div class="w-100">
                                     <h3 class="mb-4">Login</h3>

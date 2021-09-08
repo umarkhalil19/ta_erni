@@ -70,7 +70,11 @@
                                             </td>
                                             <td>
                                                 <a href="<?= base_url('Data_uji/data_uji_edit/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><small class="fa fa-wrench"></small></a>
-                                                <a href="<?= base_url('Data_uji/data_uji_delete/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><small class="fa fa-trash-o"></small></a>
+                                                <?php
+                                                if ($this->session->userdata('level') == 99) {
+                                                ?>
+                                                    <a href="<?= base_url('Data_uji/data_uji_delete/' . $u->pasien_uji_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><small class="fa fa-trash-o"></small></a>
+                                                <?php } ?>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

@@ -28,7 +28,7 @@ class Mylib
 		if (!array_key_exists('title', $data)) {
 			$data['title'] = 'Naive Bayes dan Dempster Shafer';
 		}
-		if ($ci->session->userdata('status') != 'loginadmin') {
+		if ($ci->session->userdata('level') == 99) {
 			$ci->load->view('admin/v_header', $data);
 			$ci->load->view('admin/v_navbar', $data);
 			if ($data) {
@@ -37,24 +37,24 @@ class Mylib
 				$ci->load->view($view);
 			}
 			$ci->load->view('admin/v_footer', $data);
-		} elseif ($ci->session->userdata('status') == 'loginowner') {
-			$ci->load->view('owner/template/v_header', $data);
-			$ci->load->view('owner/template/v_navbar', $data);
+		} elseif ($ci->session->userdata('level') == 1) {
+			$ci->load->view('user/v_header', $data);
+			$ci->load->view('user/v_navbar', $data);
 			if ($data) {
-				$ci->load->view('page/' . $view, $data);
+				$ci->load->view('pages/' . $view, $data);
 			} else {
 				$ci->load->view($view);
 			}
-			$ci->load->view('operator/template/v_footer', $data);
-		} elseif ($ci->session->userdata('status') == 'loginopt') {
-			$ci->load->view('operator/template/v_header', $data);
-			$ci->load->view('operator/template/v_navbar', $data);
-			if ($data) {
-				$ci->load->view('page/' . $view, $data);
-			} else {
-				$ci->load->view($view);
-			}
-			$ci->load->view('operator/template/v_footer', $data);
+			$ci->load->view('user/v_footer', $data);
+			// } elseif ($ci->session->userdata('status') == 'loginopt') {
+			// 	$ci->load->view('operator/template/v_header', $data);
+			// 	$ci->load->view('operator/template/v_navbar', $data);
+			// 	if ($data) {
+			// 		$ci->load->view('page/' . $view, $data);
+			// 	} else {
+			// 		$ci->load->view($view);
+			// 	}
+			// 	$ci->load->view('operator/template/v_footer', $data);
 		}
 	}
 
