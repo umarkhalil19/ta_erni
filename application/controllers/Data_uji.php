@@ -22,12 +22,22 @@ class Data_uji extends CI_Controller
     public function index()
     {
         $data['uji'] = $this->m_vic->get_data('tbl_pasien_uji');
+        if ($this->session->userdata('level') == 1) {
+            $data['title_sub'] = "Screening";
+        } elseif ($this->session->userdata('level') == 99) {
+            $data['title_sub'] = "Data Uji";
+        }
         $this->mylib->aview('v_pasien_uji', $data);
     }
 
     public function data_uji_add()
     {
         $data['gejala'] = $this->m_vic->get_data('tbl_gejala');
+        if ($this->session->userdata('level') == 1) {
+            $data['title_sub'] = "Screening";
+        } elseif ($this->session->userdata('level') == 99) {
+            $data['title_sub'] = "Data Uji";
+        }
         $this->mylib->aview('v_data_uji_add', $data);
     }
 
@@ -73,6 +83,11 @@ class Data_uji extends CI_Controller
                 'pasien_uji_id' => $id
             ];
             $data['pasien'] = $this->m_vic->edit_data($w, 'tbl_pasien_uji')->row();
+            if ($this->session->userdata('level') == 1) {
+                $data['title_sub'] = "Screening";
+            } elseif ($this->session->userdata('level') == 99) {
+                $data['title_sub'] = "Data Uji";
+            }
             // $data['gejala_uji'] = $this->m_vic->edit_data($w, 'tbl_gejala_uji');
             $data['gejala'] = $this->m_vic->get_data('tbl_gejala');
             $this->mylib->aview('v_data_uji_edit', $data);

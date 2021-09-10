@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="header">
         <h1 class="page-header">
-            Form Tambah Data Uji <small>Data Pasien</small>
+            Form Tambah <?= $title_sub ?> <small>Data Pasien</small>
         </h1>
     </div>
     <div id="page-inner">

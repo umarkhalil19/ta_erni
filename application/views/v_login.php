@@ -44,7 +44,8 @@
                                 <input type="password" class="form-control" placeholder="Password" name="password" required>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary submit px-3">Login</button>
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Login</button><br><br>
+                                <a href="<?= base_url('Login/as_user') ?>" type="submit" class="form-control btn btn-primary submit px-3">Masuk Sebagai User</a>
                             </div>
                             <?= form_close() ?>
                         </div>

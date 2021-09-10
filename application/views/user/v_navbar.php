@@ -9,7 +9,7 @@
                 <a href="#"><i class="fa fa-file"></i>Data Pasien<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="<?= base_url('Data_uji') ?>">Data Uji</a>
+                        <a href="<?= base_url('Data_uji') ?>">Screening</a>
                     </li>
                 </ul>
             </li>

@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="header">
         <h1 class="page-header">
-            Data Tabel <small>Tabel Uji</small>
+            Data Tabel <small>Tabel <?= $title_sub ?></small>
         </h1>
         <?php if (isset($_GET['notif'])) : _notif($this->session->flashdata($_GET['notif']));
         endif; ?>
@@ -21,7 +21,7 @@
                                 <thead>
                                     <tr>
                                         <th rowspan="2">#</th>
-                                        <th width="40%" rowspan="2">Gejala</th>
+                                        <th width="35%" rowspan="2">Gejala</th>
                                         <th width="5%" colspan="2">Diagnosa</th>
                                         <th rowspan="2">Pengujian Algortima</th>
                                         <th rowspan="2">Action</th>
@@ -34,7 +34,15 @@
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    foreach ($uji->result() as $u) : ?>
+                                    foreach ($uji->result() as $u) :
+                                        $nama_p = $this->db->query("SELECT penyakit_nama FROM tbl_penyakit WHERE penyakit_kode='$u->penyakit_kode_nb'")->row();
+                                        $nama_p2 = "";
+                                        $a_penyakit = explode(",", $u->penyakit_kode_ds);
+                                        foreach ($a_penyakit as $ap) {
+                                            $c_nama = $this->db->query("SELECT penyakit_nama FROM tbl_penyakit WHERE penyakit_kode='$ap'")->row();
+                                            $nama_p2 .= $c_nama->penyakit_nama . '/';
+                                        }
+                                    ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
                                             <?php
@@ -45,11 +53,11 @@
                                                 $txt .= $nama->gejala_nama . ',';
                                             ?>
                                             <?php endforeach ?>
-                                            <td><?= $txt ?></td>
+                                            <td><?= substr($txt, 0, -1); ?></td>
                                             <td>
                                                 <?php
                                                 if ($u->penyakit_kode_nb != "" && $u->penyakit_kode_nb != " ") {
-                                                    echo $u->penyakit_kode_nb;
+                                                    echo $nama_p->penyakit_nama;
                                                 } else {
                                                     echo "Belum Terdefinisi";
                                                 }
@@ -58,7 +66,7 @@
                                             <td>
                                                 <?php
                                                 if ($u->penyakit_kode_ds != "" && $u->penyakit_kode_ds != " ") {
-                                                    echo $u->penyakit_kode_ds;
+                                                    echo substr($nama_p2, 0, -1);
                                                 } else {
                                                     echo "Belum Terdefinisi";
                                                 }

@@ -69,6 +69,15 @@ class Login extends CI_Controller
         }
     }
 
+    public function as_user()
+    {
+        $session = [
+            'level' => 1
+        ];
+        $this->session->set_userdata($session);
+        redirect('Dashboard');
+    }
+
     public function check_captcha($str)
     {
         $word = $this->session->userdata('captchaWord');
