@@ -58,7 +58,9 @@
                                         $a_penyakit = explode(",", $u->penyakit_kode_ds);
                                         foreach ($a_penyakit as $ap) {
                                             $c_nama = $this->db->query("SELECT penyakit_nama FROM tbl_penyakit WHERE penyakit_kode='$ap'")->row();
-                                            $nama_p2 .= $c_nama->penyakit_nama . '/';
+                                            if ($c_nama) {
+                                                $nama_p2 .= $c_nama->penyakit_nama . '/';
+                                            }
                                         }
                                     ?>
                                         <tr>
