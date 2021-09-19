@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `tbl_diagnosa` (
   `gejala_nilai` int(1) NOT NULL,
   `penyakit_kode` varchar(10) NOT NULL,
   PRIMARY KEY (`diagnosa_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9155 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9172 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ta_erni.tbl_diagnosa: ~8,725 rows (approximately)
 DELETE FROM `tbl_diagnosa`;
@@ -8591,7 +8591,24 @@ INSERT INTO `tbl_diagnosa` (`diagnosa_id`, `pasien_id`, `gejala_id`, `gejala_nil
 	(9151, 497, 17, 0, 'P01'),
 	(9152, 498, 17, 0, 'P03'),
 	(9153, 499, 17, 0, 'P01'),
-	(9154, 500, 17, 0, 'P02');
+	(9154, 500, 17, 0, 'P02'),
+	(9155, 501, 1, 1, 'P02'),
+	(9156, 501, 2, 1, 'P02'),
+	(9157, 501, 3, 0, 'P02'),
+	(9158, 501, 4, 0, 'P02'),
+	(9159, 501, 5, 0, 'P02'),
+	(9160, 501, 6, 0, 'P02'),
+	(9161, 501, 7, 0, 'P02'),
+	(9162, 501, 8, 0, 'P02'),
+	(9163, 501, 9, 0, 'P02'),
+	(9164, 501, 10, 0, 'P02'),
+	(9165, 501, 11, 0, 'P02'),
+	(9166, 501, 12, 0, 'P02'),
+	(9167, 501, 13, 0, 'P02'),
+	(9168, 501, 14, 0, 'P02'),
+	(9169, 501, 15, 0, 'P02'),
+	(9170, 501, 16, 1, 'P02'),
+	(9171, 501, 17, 1, 'P02');
 /*!40000 ALTER TABLE `tbl_diagnosa` ENABLE KEYS */;
 
 -- Dumping structure for table db_ta_erni.tbl_gejala
@@ -8688,23 +8705,23 @@ INSERT INTO `tbl_likelihood` (`lh_id`, `penyakit_kode`, `gejala_id`, `lh_nilai`)
 	(15, 'P01', 15, 0.2500),
 	(16, 'P01', 16, 0.1864),
 	(17, 'P01', 17, 0.0318),
-	(18, 'P02', 1, 0.3486),
-	(19, 'P02', 2, 0.4450),
-	(20, 'P02', 3, 0.4450),
-	(21, 'P02', 4, 0.2844),
-	(22, 'P02', 5, 0.0734),
-	(23, 'P02', 6, 0.0917),
-	(24, 'P02', 7, 0.2752),
-	(25, 'P02', 8, 0.2661),
-	(26, 'P02', 9, 0.3670),
-	(27, 'P02', 10, 0.1468),
-	(28, 'P02', 11, 0.1972),
-	(29, 'P02', 12, 0.1055),
+	(18, 'P02', 1, 0.3516),
+	(19, 'P02', 2, 0.4475),
+	(20, 'P02', 3, 0.4429),
+	(21, 'P02', 4, 0.2831),
+	(22, 'P02', 5, 0.0731),
+	(23, 'P02', 6, 0.0913),
+	(24, 'P02', 7, 0.2740),
+	(25, 'P02', 8, 0.2648),
+	(26, 'P02', 9, 0.3653),
+	(27, 'P02', 10, 0.1461),
+	(28, 'P02', 11, 0.1963),
+	(29, 'P02', 12, 0.1050),
 	(30, 'P02', 13, 0.0000),
 	(31, 'P02', 14, 0.0000),
-	(32, 'P02', 15, 0.0275),
-	(33, 'P02', 16, 0.1009),
-	(34, 'P02', 17, 0.0000),
+	(32, 'P02', 15, 0.0274),
+	(33, 'P02', 16, 0.1050),
+	(34, 'P02', 17, 0.0046),
 	(35, 'P03', 1, 0.3065),
 	(36, 'P03', 2, 0.2742),
 	(37, 'P03', 3, 0.1774),
@@ -8730,7 +8747,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pasien` (
   `pasien_nama` varchar(10) NOT NULL,
   `penyakit_kode` varchar(10) NOT NULL,
   PRIMARY KEY (`pasien_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=502 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_ta_erni.tbl_pasien: ~500 rows (approximately)
 DELETE FROM `tbl_pasien`;
@@ -9235,33 +9252,34 @@ INSERT INTO `tbl_pasien` (`pasien_id`, `pasien_nama`, `penyakit_kode`) VALUES
 	(497, 'AR', 'P01'),
 	(498, 'SH', 'P03'),
 	(499, 'ER', 'P01'),
-	(500, 'Y', 'P02');
+	(500, 'Y', 'P02'),
+	(501, 'HN', 'P02');
 /*!40000 ALTER TABLE `tbl_pasien` ENABLE KEYS */;
 
 -- Dumping structure for table db_ta_erni.tbl_pasien_uji
 CREATE TABLE IF NOT EXISTS `tbl_pasien_uji` (
   `pasien_uji_id` int(11) NOT NULL AUTO_INCREMENT,
   `pasien_uji_nama` varchar(50) NOT NULL,
-  `penyakit_kode_nb` varchar(10) NOT NULL,
-  `penyakit_kode_ds` varchar(10) NOT NULL,
+  `penyakit_kode_nb` varchar(20) NOT NULL,
+  `penyakit_kode_ds` varchar(20) NOT NULL,
   PRIMARY KEY (`pasien_uji_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_ta_erni.tbl_pasien_uji: ~2 rows (approximately)
+-- Dumping data for table db_ta_erni.tbl_pasien_uji: ~5 rows (approximately)
 DELETE FROM `tbl_pasien_uji`;
 /*!40000 ALTER TABLE `tbl_pasien_uji` DISABLE KEYS */;
 INSERT INTO `tbl_pasien_uji` (`pasien_uji_id`, `pasien_uji_nama`, `penyakit_kode_nb`, `penyakit_kode_ds`) VALUES
 	(1, 'UK', 'P01', 'P01'),
 	(2, 'HN', 'P01', 'P01'),
 	(3, 'UMPN', 'P03', 'P01,P03'),
-	(4, 'ES', 'P02', 'P01,P02,P0');
+	(4, 'ES', 'P02', 'P01,P02,P03');
 /*!40000 ALTER TABLE `tbl_pasien_uji` ENABLE KEYS */;
 
 -- Dumping structure for table db_ta_erni.tbl_penyakit
 CREATE TABLE IF NOT EXISTS `tbl_penyakit` (
   `penyakit_id` int(11) NOT NULL AUTO_INCREMENT,
   `penyakit_nama` varchar(20) NOT NULL,
-  `penyakit_kode` varchar(10) NOT NULL,
+  `penyakit_kode` varchar(20) NOT NULL,
   PRIMARY KEY (`penyakit_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -9286,10 +9304,35 @@ CREATE TABLE IF NOT EXISTS `tbl_prior_probability` (
 DELETE FROM `tbl_prior_probability`;
 /*!40000 ALTER TABLE `tbl_prior_probability` DISABLE KEYS */;
 INSERT INTO `tbl_prior_probability` (`pp_id`, `penyakit_id`, `pp_nilai`) VALUES
-	(1, 1, 0.44),
-	(2, 2, 0.436),
-	(3, 3, 0.124);
+	(1, 1, 0.43912175648703),
+	(2, 2, 0.43712574850299),
+	(3, 3, 0.12375249500998);
 /*!40000 ALTER TABLE `tbl_prior_probability` ENABLE KEYS */;
+
+-- Dumping structure for table db_ta_erni.tbl_users
+CREATE TABLE IF NOT EXISTS `tbl_users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(225) NOT NULL,
+  `user_email` varchar(225) NOT NULL,
+  `user_login` varchar(225) NOT NULL,
+  `user_pass` varchar(225) NOT NULL,
+  `user_level` int(11) NOT NULL,
+  `user_status` varchar(20) NOT NULL,
+  `h_pengguna` varchar(100) NOT NULL,
+  `h_tanggal` date NOT NULL,
+  `h_waktu` time NOT NULL,
+  `h_lokasi` varchar(250) NOT NULL,
+  `h_ip` varchar(250) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_ta_erni.tbl_users: ~1 rows (approximately)
+DELETE FROM `tbl_users`;
+/*!40000 ALTER TABLE `tbl_users` DISABLE KEYS */;
+INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_email`, `user_login`, `user_pass`, `user_level`, `user_status`, `h_pengguna`, `h_tanggal`, `h_waktu`, `h_lokasi`, `h_ip`) VALUES
+	(1, 'Erni Susanti', 'umar.150170043@mhs.unimal.ac.id', 'erni', '2b5e148f18eb011f5863b6b171a66a41', 99, 'Aktif', '', '0000-00-00', '00:00:00', '', ''),
+	(3, 'Umar Khalil', 'umarkhalil@unimal.ac.id', 'umar', '4178547e8a327db048a0a06e787a833a', 1, 'Aktif', '', '0000-00-00', '00:00:00', '', '');
+/*!40000 ALTER TABLE `tbl_users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

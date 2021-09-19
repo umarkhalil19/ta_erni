@@ -3,6 +3,8 @@
         <h1 class="page-header">
             Data Tabel <small>Tabel Data Latih</small>
         </h1>
+        <?php if (isset($_GET['notif'])) : _notif($this->session->flashdata($_GET['notif']));
+        endif; ?>
     </div>
     <div id="page-inner">
         <div class="row">
@@ -26,7 +28,7 @@
                                         <th rowspan="2">Pasien</th>
                                         <th rowspan="2">Diagnosa</th>
                                         <th colspan="<?= $jmlh->jmlh; ?>" style="text-align: center;">Gejala</th>
-                                        <!-- <th rowspan="2">Action</th> -->
+                                        <th rowspan="2">Action</th>
                                     </tr>
                                     <tr>
                                         <?php
@@ -67,10 +69,10 @@
                                                 <td><?= $txt; ?></td>
                                             <?php endforeach
                                             ?>
-                                            <!-- <td>
-                                                <a href="#" class="btn btn-sm btn-primary" title="Edit Data"><i class="fa fa-wrench"></i></a>
-                                                <a href="#" class="btn btn-sm btn-danger" title="Hapus Data"><i class="fa fa-trash-o"></i></a>
-                                            </td> -->
+                                            <td>
+                                                <a href="<?= base_url('Data_latih/data_latih_edit/' . $p->pasien_id) ?>" class="btn btn-sm btn-primary" title="Edit Data"><i class="fa fa-wrench"></i></a>
+                                                <a href="<?= base_url('Data_latih/data_latih_delete/' . $p->pasien_id) ?>" class="btn btn-sm btn-danger" title="Hapus Data"><i class="fa fa-trash-o"></i></a>
+                                            </td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
