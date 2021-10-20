@@ -72,8 +72,8 @@ class Dempster_shafer extends CI_Controller
             }
         }
         $data = [
-            'gejala_kepercayaan' => $nilai_1,
-            'gejala_ketidakpastian' => $nilai_2,
+            'gejala_kepercayaan' => round($nilai_1, 1),
+            'gejala_ketidakpastian' =>  round($nilai_2, 1),
             'gejala_string' => substr($a_penyakit, 0, -1)
         ];
         $this->m_vic->update_data(['gejala_id' => $id], $data, 'tbl_gejala');

@@ -98,6 +98,7 @@ class Penyakit extends CI_Controller
         } else {
             $w = ['penyakit_id' => $id];
             $this->m_vic->delete_data($w, 'tbl_penyakit');
+            $this->m_vic->delete_data($w, 'tbl_prior_probability');
             $this->session->set_flashdata('suces', 'Data Penyakit berhasil dihapus');
             redirect('Penyakit?notif=suces');
         }
