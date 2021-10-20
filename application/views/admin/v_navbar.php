@@ -14,9 +14,6 @@
                     <li>
                         <a href="<?= base_url('Penyakit') ?>">Penyakit</a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('Users') ?>">Users</a>
-                    </li>
                 </ul>
             </li>
             <li>
