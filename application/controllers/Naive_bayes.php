@@ -66,15 +66,25 @@ class Naive_bayes extends CI_Controller
                 ];
                 $cek = $this->m_vic->edit_data($w, 'tbl_likelihood');
                 if ($cek->row()) {
+                    if ($a->a == 0) {
+                        $lh_nilai = 0;
+                    } else {
+                        $lh_nilai = $b->b / $a->a;
+                    }
                     $data = [
-                        'lh_nilai' => $b->b / $a->a
+                        'lh_nilai' => $lh_nilai
                     ];
                     $this->m_vic->update_data($w, $data, 'tbl_likelihood');
                 } else {
+                    if ($a->a == 0) {
+                        $lh_nilai = 0;
+                    } else {
+                        $lh_nilai = $b->b / $a->a;
+                    }
                     $data = [
                         'penyakit_kode' => $p->penyakit_kode,
                         'gejala_id' => $gj->gejala_id,
-                        'lh_nilai' => $b->b / $a->a
+                        'lh_nilai' => $lh_nilai
                     ];
                     $this->m_vic->insert_data($data, 'tbl_likelihood');
                 }

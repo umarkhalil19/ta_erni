@@ -42,6 +42,16 @@ class Penyakit extends CI_Controller
                 'penyakit_kode' => $this->input->post('kode')
             ];
             $this->m_vic->insert_data($data, 'tbl_penyakit');
+            $last = $this->db->insert_id();
+            $gejala = $this->m_vic->get_data('tbl_gejala');
+            foreach ($gejala->result() as $g) {
+                $dampster = [
+                    'gejala_id' => $g->gejala_id,
+                    'penyakit_id' => $last,
+                    'dempster_nilai' => 0
+                ];
+                $this->m_vic->insert_data($dampster, 'tbl_dempster');
+            }
             $this->session->set_flashdata('suces', 'Data Penyakit Berhasil Ditambah');
             redirect('Penyakit?notif=suces');
         }

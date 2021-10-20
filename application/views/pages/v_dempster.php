@@ -19,7 +19,7 @@
                                     <tr>
                                         <th rowspan="2">#</th>
                                         <th rowspan="2">Gejala</th>
-                                        <th colspan="3">Penyakit</th>
+                                        <th colspan="<?= $penyakit->num_rows() ?>">Penyakit</th>
                                         <th rowspan="2">Nilai Kepercayaan</th>
                                         <th rowspan="2">Nilai Ketidakpastian</th>
                                         <th rowspan="2">Action</th>
